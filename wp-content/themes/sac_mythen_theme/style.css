@@ -1,0 +1,2183 @@
+@/*
+Theme Name: SAC Sektion Mythen Theme
+Author: ulrich.digital
+Author URI: https://ulrich.digital
+Version: 2021.8
+License: GNU General Public License
+License URI: https://www.gnu.org/licenses/gpl.html
+Description: Wordpress Theme für den SAC Sektion Mythen
+Text Domain: ulrich_digital_blank
+* Domain Path: /languages
+*/
+
+/* CSS  Reset  */
+article,aside,details,figcaption,figure,footer,header,hgroup,hr,menu,nav,section{display:block}a,hr{padding:0}abbr,address,article,aside,audio,b,blockquote,body,canvas,caption,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:0 0}ins,mark{background-color:#ff9;color:#000}body{line-height:1}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}a{margin:0;font-size:100%;vertical-align:baseline;background:0 0}ins{text-decoration:none}mark{font-style:italic;font-weight:700}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{height:1px;border:0;border-top:1px solid #ccc;margin:1em 0}input,select{vertical-align:middle}
+
+ul{list-style: none;}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+/* =============================================================== *\ 
+ 	 Fonts 
+\* =============================================================== */ 
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-MediumItalic.eot');
+    src: url('webfonts/Roboto-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-MediumItalic.woff2') format('woff2'),
+        url('webfonts/Roboto-MediumItalic.woff') format('woff'),
+        url('webfonts/Roboto-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-Thin.eot');
+    src: url('webfonts/Roboto-Thin.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-Thin.woff2') format('woff2'),
+        url('webfonts/Roboto-Thin.woff') format('woff'),
+        url('webfonts/Roboto-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-Medium.eot');
+    src: url('webfonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-Medium.woff2') format('woff2'),
+        url('webfonts/Roboto-Medium.woff') format('woff'),
+        url('webfonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-Regular.eot');
+    src: url('webfonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-Regular.woff2') format('woff2'),
+        url('webfonts/Roboto-Regular.woff') format('woff'),
+        url('webfonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-Black.eot');
+    src: url('webfonts/Roboto-Black.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-Black.woff2') format('woff2'),
+        url('webfonts/Roboto-Black.woff') format('woff'),
+        url('webfonts/Roboto-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-Bold.eot');
+    src: url('webfonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-Bold.woff2') format('woff2'),
+        url('webfonts/Roboto-Bold.woff') format('woff'),
+        url('webfonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-Light.eot');
+    src: url('webfonts/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-Light.woff2') format('woff2'),
+        url('webfonts/Roboto-Light.woff') format('woff'),
+        url('webfonts/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-Italic.eot');
+    src: url('webfonts/Roboto-Italic.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-Italic.woff2') format('woff2'),
+        url('webfonts/Roboto-Italic.woff') format('woff'),
+        url('webfonts/Roboto-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-BlackItalic.eot');
+    src: url('webfonts/Roboto-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-BlackItalic.woff2') format('woff2'),
+        url('webfonts/Roboto-BlackItalic.woff') format('woff'),
+        url('webfonts/Roboto-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-ThinItalic.eot');
+    src: url('webfonts/Roboto-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-ThinItalic.woff2') format('woff2'),
+        url('webfonts/Roboto-ThinItalic.woff') format('woff'),
+        url('webfonts/Roboto-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-BoldItalic.eot');
+    src: url('webfonts/Roboto-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-BoldItalic.woff2') format('woff2'),
+        url('webfonts/Roboto-BoldItalic.woff') format('woff'),
+        url('webfonts/Roboto-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('webfonts/Roboto-LightItalic.eot');
+    src: url('webfonts/Roboto-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('webfonts/Roboto-LightItalic.woff2') format('woff2'),
+        url('webfonts/Roboto-LightItalic.woff') format('woff'),
+        url('webfonts/Roboto-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+@font-face{
+    font-family: 'Frutiger LT Std';
+    src: url('webfonts/FrutigerLTStd-Black.eot');
+    src: /*url('webfonts/FrutigerLTStd-Black.eot?#iefix') format('embedded-opentype'),*/
+        url('webfonts/FrutigerLTStd-Black.woff2') format('woff2'),
+        url('webfonts/FrutigerLTStd-Black.woff') format('woff'),
+        url('webfonts/FrutigerLTStd-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+    }
+
+body, 
+button{
+	font-family: 'Roboto';
+    font-size: 100%;
+    letter-spacing: 0.5px;
+	}
+
+h1, h2, h3, .entry-title{
+	font-family: 'Frutiger LT Std';
+	font-size: 29px;
+	letter-spacing: 1px;
+    margin: 0.5em 0 0.25em;
+	}
+
+article,
+article p{
+	font-size: 15px;
+    letter-spacing: 0.5px;
+	}
+
+h1, 
+article .entry-title a{
+	font-size: 26px;
+    line-height: 1.25em;
+    }
+    
+.single h1{
+    font-size: 30px;
+    }
+    
+.single h2{
+    font-size: 26px;
+    }
+    
+button.chip, 
+.chip{
+    font-size: 15px;	
+    font-weight: bold;
+	letter-spacing: 1px;
+	line-height: 1em;
+    }
+.chip{
+    cursor: default;
+}
+button.chip{
+    cursor: pointer;
+}
+ 
+	
+/* =============================================================== *\ 
+ 	 Variables 
+\* =============================================================== */ 
+:root{
+    --black: #000000;
+    --white: #ffffff;
+    
+    --body_bg: #eeeeee;
+    
+    --sektion_bg: #F0D2CB;
+    --sektion_color: #CB664E;
+
+    --veteranen_bg : #CCE6D1;
+    --veteranen_color : #5EAC6D;
+
+    --jo_bg: #D1D6EB;
+    --jo_color: #6573BC;
+
+    --kibe_bg: #ECEF9E;
+    --kibe_color: #C9D00D;
+
+    --fabe_bg: #EDCDEB;
+    --fabe_color: #C378BD;
+
+    --allgemein_bg: #D4EEF0;
+    --allgemein_color: #6EC1C7;
+
+    --light_grey_bg : #e6e6e6;
+    --middle_grey_bg : #d2d2d2;
+    --dark_grey_bg : #c0c0c0;
+
+    --icon_bg:#292929;
+    
+    --alertRed: #e9605a;
+    --alertRedHover: #f9706a;
+    
+    --alertGreen:#42c080;
+    --alertGreenHover: #52d090;
+    --alertGreenTrans: #42c08045;
+    
+    --formGreen: #33a56a;
+    
+    --borderRadius_5px : 5px;
+    --borderRadius_100px : 100px;
+    
+    --boxShadow: 2px 2px 4px #0000001c;
+    --boxShadow: 2px 2px 4px #00000030;
+    
+    --hoverTrans: 0.2s all;
+    
+    --footerBg: #2a2a2d;
+    
+     --animate-duration_search_results: 1s;
+     --animate-duration: 1s;
+     --animate-delay: 1s;
+     --animate-repeat: 1;
+     
+     --footerGo: #333;
+     --footerLightGrey:#29282f;;
+	}
+
+
+
+/* =============================================================== *\ 
+ 	 General 
+\* =============================================================== */ 
+html{
+    overflow-x: hidden;
+    }
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    }
+
+a{
+    color:var(--black);
+    text-decoration: none;
+    }   
+    	    	
+img{
+    display: block;
+    height: auto;
+    }
+
+button{
+    border:none;
+    cursor: pointer;
+    }
+
+strong{
+    font-weight: bold;
+    }
+  
+
+.white{
+    background:var(--white);    
+    }
+        
+.grey{
+    background: var(--body_bg);
+    opacity: 1;
+    }
+
+.red{
+    background: var(--red);
+    }
+.alert_red{
+    background: var(--alertRed);
+}    
+        
+.go_green{
+    transition: var(--hoverTrans);
+    cursor:pointer;
+    }
+
+.go_green.is_active,
+.go_green:hover{
+    opacity: 1;
+    color: var(--white);
+    border-color: inherit;
+    background: var(--alertGreenHover);
+    box-shadow: var(--boxShadow);
+    }
+    
+.go_grey:hover{
+    background: var(--middle_grey_bg);    
+    }
+
+.flex{
+    display: flex;
+}
+.flex.centered{
+    justify-content: center;
+}
+.flex.between{
+    justify-content: space-between;
+}
+.flex.column{
+    flex-direction: column;
+}
+.bordered{
+    border: 1px solid;
+    }
+.display_none{
+    display: none!important;
+}
+.dashed{
+    border:1px dashed black;    
+    }
+        
+.shadow,
+.box_shadow{
+    box-shadow: var(--boxShadow)
+    }
+    .padding{
+        padding: 20px;
+    }
+
+.rounded{
+    border-radius: var(--borderRadius_5px);
+    overflow:hidden;
+    }
+    .section_button{
+        padding: 15px!important;
+    }
+.extreme_rounded{
+    border-radius: var(--borderRadius_100px);
+    overflow:hidden;
+    }    
+    
+.italic{
+    font-style: italic;
+    }  
+.footer_light_grey{
+    background: var(--footerLightGrey);
+}
+footer .footer_go{
+    border:1px solid white;    
+    color: white;
+}
+.footer_go a{
+
+}
+.margin_10{
+    margin:0 10px;
+}
+.margin_20{
+    margin:0 20px;
+}
+    /* OPTIMIZE:  */
+    .extreme_rounded{
+        max-height: 46px;
+    }
+    .extreme_rounded.selected{
+        max-height: none;
+    }
+    
+/* =============================================================== *\ 
+ 	 Drop-Down-Button 
+\* =============================================================== */ 
+.drop_down_button{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    border-radius: 23px;
+    position: relative;
+    cursor: auto;
+    }
+    
+.drop_down_button.extreme_rounded{
+    overflow: visible;
+    }
+    
+.drop_down_button ul{
+    display: none;
+    }
+    
+.drop_down_button:hover .more_button{
+    color: white;
+    transition: var(--hoverTrans);
+    cursor: pointer;
+    }
+    
+.drop_down_button i{
+    display: none;
+    }
+    
+.drop_down_button:hover i{
+    display: block;
+    }
+    
+.drop_down_button li{
+    margin: 10px 0;
+    background: var(--body_bg);
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: var(--hoverTrans);
+    }
+    
+.drop_down_button li:last-child{
+    margin-bottom: 0;
+    }
+
+.drop_down_button li:hover{
+    background: var(--white);
+    }
+
+.drop_down_button .more_button{
+    padding: 0;
+    margin: 0;
+    }    
+
+.drop_down_button.selected i{
+    transition: var(--hoverTrans);
+    transform: rotate(90deg);
+    }
+    
+    
+    
+    /* OPTIMIZE:  */
+    .flex .wp-block-group__inner-container{
+        width:100%;
+        display: flex;
+        flex-wrap:wrap;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .wp-block-media-text{
+        border-radius: var(--borderRadius_5px);
+        background: var(--white);
+        box-shadow: var(--boxShadow);
+        overflow: hidden;
+        max-width: 600px;
+    margin:10px;
+        }
+
+.details_container .details{
+    max-width: 450px;
+}    
+    
+.home h2{ margin: 0 auto 5vh;}
+
+
+/* =============================================================== *\ 
+
+ 	 Button Prev/Next 
+
+\* =============================================================== */ 
+  .prev_posts:hover a,
+  .next_posts:hover a{
+      color:var(--white);
+  }
+
+/* =============================================================== *\ 
+    Main-Elements 
+\* =============================================================== */ 	
+body{
+    background: var(--body_bg);
+    }
+    
+#header{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap-reverse;
+    align-items: center;
+    background: transparent;
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    transition: var(--hoverTrans);
+    top:0;
+    padding: 3px 10px;
+    }
+ #header.colored{
+     background: grey;
+     background: #cc0b18;
+ }
+.home #header.colored{
+    background: #e3000f;
+    background: #cc0b18;
+}
+#logo{
+    margin: 5px;
+    filter: drop-shadow(2px 2px 1px #00000055);
+	width:168;
+    height:70px;
+    transition: var(--hoverTrans);
+    }
+#logo.klein{
+    width: 108px;
+    height:45px;
+}
+#content_container{
+    min-height: calc(100vh - 200px);
+    margin: 0 20px;
+    }
+    #content_container:not(.home #content_container){
+        margin-top: 15vh;
+    }
+
+.container{
+    padding:20px;
+    line-height: 1.25em;
+    }    
+.flex{
+    display: flex;
+    align-items: flex-start;
+}
+footer{
+    margin-top: 20vh;
+    min-height: 100px;
+    background: var(--footerBg);
+    }
+
+
+/* =============================================================== *\ 
+ 	 Hauptmenu 
+\* =============================================================== */ 
+#hauptmenue{
+    display: flex;
+    padding: 10px;
+    z-index: 1000;
+}
+#hauptmenue .menu{
+    display: flex;
+    
+}
+#hauptmenue a{
+    font-weight: 500;
+font-size: 18px;
+text-transform: uppercase;
+color: white;
+margin-right: 2em;
+letter-spacing: 2px;
+}
+#branding a{
+    display: block;
+}
+/*#menu{
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    transition: var(--hoverTrans);
+    }
+    
+#menu.out{
+    transform:matrix(1,0,0,1,-500,0);
+    }
+    
+#menu.out .main_menu_container{
+    transition: 0.2s all;
+    opacity: 0;
+    }
+    
+#menu-main-menu{
+    margin: 0 0px 0 0;
+    background: var(--white);
+    padding: 10px;
+    box-shadow: var(--boxShadow);
+    border-bottom-right-radius: 5px;
+    }
+    
+#menu-main-menu li{
+    line-height: 2em;
+    }
+        
+#menu-main-menu a{
+    text-transform: uppercase;
+    color: inherit;
+    text-decoration: none;
+    letter-spacing: 1px;
+    background: var(--white);
+    padding: 5px;
+    border-radius: var(--borderRadius_5px);
+    transition: var(--hoverTrans);
+    }  
+    
+#menu-main-menu a:hover{
+    background: var(--light_grey_bg);
+    }
+    
+#menu-main-menu a[aria-current] {
+    background:var(--alertRed);
+    color:var(--white);
+    }
+
+/* =============================================================== *\
+   Hamburger-Icon
+   @site https://jonsuh.com/hamburgers
+   @link https://github.com/jonsuh/hamburgers
+\* =============================================================== */ 
+/*.hamburger{
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible; 
+    background: var(--body_bg);
+    }
+
+.hamburger:hover{
+    }
+.hamburger.is-active{
+    }    
+.hamburger.is-active:hover{
+    }
+    
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after{
+    background-color: var(--black); 
+    }
+
+.hamburger-box{
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative; 
+    }
+
+.hamburger-inner{
+    display: block;
+    top: 50%;
+    margin-top: -2px; 
+    }
+    
+.hamburger-inner, 
+.hamburger-inner::before, 
+.hamburger-inner::after{
+    width: 40px;
+    height: 4px;
+    background-color: var(--black);
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; 
+    }
+    
+.hamburger-inner::before, .hamburger-inner::after{
+    content: "";
+    display: block; 
+    }
+
+.hamburger-inner::before{
+    top: -10px; 
+    }
+
+.hamburger-inner::after{
+    bottom: -10px; 
+    }
+
+/* Hamburger Collapse  */ 
+/*.hamburger--collapse .hamburger-inner{
+    top: auto;
+    bottom: 0;
+    transition-duration: 0.13s;
+    transition-delay: 0.13s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+    }
+
+.hamburger--collapse .hamburger-inner::after{
+    top: -20px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear; 
+    }
+
+.hamburger--collapse .hamburger-inner::before{
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+    }
+
+.hamburger--collapse.is-active .hamburger-inner{
+    transform: translate3d(0, -10px, 0) rotate(-45deg);
+    transition-delay: 0.22s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+    }
+    
+.hamburger--collapse.is-active .hamburger-inner::after{
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear; 
+    }
+    
+.hamburger--collapse.is-active .hamburger-inner::before{
+    top: 0;
+    transform: rotate(-90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); 
+    }
+
+
+/* =============================================================== *\ 
+
+ 	 footer_menu_3 
+
+\* =============================================================== */ 
+footer .footer_menu_1 a:hover,
+footer .footer_menu_2 a:hover{
+    text-decoration: none;
+}
+footer .footer_menu_1 ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+footer .footer_menu_2 ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+footer .footer_menu_1 li,
+footer .footer_menu_2 li{
+    background: #1b1b1d;
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-bottom: 0.5em;
+    padding-right: 15px;;
+}
+footer .footer_menu_1 .house:before,
+footer .footer_menu_1 .books:before,
+footer .footer_menu_1 .heart:before,
+footer .footer_menu_1 .nature:before,
+footer .footer_menu_1 .holding-hand:before{
+    font-family: 'Font Awesome 6 Pro';
+    display: inline-block;
+    padding-right: 7px;
+    font-weight:900;
+    color: #52524B;
+    transition: var(--hoverTrans);
+}
+
+footer .house:before{
+    content: "\f4c9";
+    }
+
+footer .house:hover:before{
+    color:#766C45;
+    }
+
+footer .books:before{
+    content: "\f5db";
+    }
+
+footer .books:hover:before{
+    color:#3951D8;
+    }
+
+footer .heart:before{
+    content: "\f004";
+    }
+
+footer .heart:hover:before{
+    color:#AD2424;
+    }
+    
+footer .nature:before{
+    content: "\f4cb";
+    }
+
+footer .nature:hover:before{
+    color:#2A9326;
+    }
+
+footer .holding-hand:before{
+    content: "\f4be";
+    }
+
+footer .holding-hand:hover:before{
+    color:#bd6318;
+    }
+
+
+footer .footer_menu_2 .menu-item:after{
+    font-family: 'Font Awesome 6 Pro';
+    display: inline-block;
+    padding-left: 7px;
+    font-weight:900;
+    content: "\f023";
+    color:grey;
+}
+/* =============================================================== *\ 
+ 	 Breadcrumb-Menu 
+\* =============================================================== */ 
+.breadcrumb_container{
+    position: absolute;
+    width: 100%;
+    }
+
+.breadcrumb{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 1200px;
+    padding:10px 20px;
+    margin: auto;
+    font-style: italic;
+    }
+    
+.breadcrumb a{
+    text-decoration: none;
+    color: inherit;
+    font-style: italic;
+    font-size: 90%;
+    transition: var(--hoverTrans);
+    }
+
+.breadcrumb i,
+.breadcrumb a,
+.breadcrumb span{
+    opacity: 0.5;       
+    }
+
+.breadcrumb a:hover{
+    opacity: 1;
+    }  
+
+/* =============================================================== *\ 
+ 	 Ajax-Search-Results 
+\* =============================================================== */ 
+.search_results article{
+    opacity: 1;
+    }
+    
+.loader_container{
+    min-height: 50vh;
+    display: flex;
+    display: none;
+    }
+
+.loader_gif{
+    display: block;
+    margin: auto;
+    max-width: 50px;
+    opacity: 0.3;
+    animation-name: loaderAnimation;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
+    }
+
+@-webkit-keyframes loaderAnimation {
+    from{
+        transform: translate3d(-200%, 100%, 0);
+        }
+    to{
+        transform: translate3d(200%, -100%, 0);        
+        }
+    }
+
+@keyframes loaderAnimation {
+    from{
+        transform: translate3d(-200%, 100%, 0);
+        }
+    to{
+        transform: translate3d(200%, -100%, 0);
+        }
+    }   
+        
+/* =============================================================== *\ 
+   Ajax-Menu
+   Isotope-Menu 
+\* =============================================================== */ 
+.archive_menu.container{}
+.ajax.menu{
+    display: flex;
+    }
+
+.ajax_container .ajax.menu,
+.isotope_container .isotope.menu{
+    padding: 0px 0;
+}
+.ajax_container .chip,
+.isotope_container .chips_container .chip{
+    margin: 5px;
+}
+     
+/* =============================================================== *\ 
+ 	 Masonry 
+\* =============================================================== */ 
+.grid_sizer,
+.grid_item{
+    width:400px;
+    }  
+.grid_item{
+    padding: 25px;
+    }  
+    
+/* =============================================================== *\ 
+ 	 Radio 
+\* =============================================================== */ 
+/*https://moderncss.dev/pure-css-custom-styled-radio-buttons/*/
+.fieldset_radio{
+    padding: 10px 20px;
+    }
+    
+.radio{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    padding: 5px;
+    background: var(--body_bg);
+    border-radius: var(--borderRadius_5px);
+    color:var(--black);
+    cursor: pointer;
+    }
+    
+.radio__input{
+    display: flex;
+    }
+    
+.radio__input input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    }
+
+.radio__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translateY(-0.05em);
+    }
+    
+.radio__input input + .radio__control::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    box-shadow: inset 10px 10px currentColor;
+    border-radius: 50%;
+    transition: var(--hoverTrans);
+    transform: scale(0);
+    }
+    
+.radio__input input:checked + .radio__control::before {
+    transform: scale(1);
+    }
+
+.radio__label {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    transition: var(--hoverTrans);
+    opacity: 0.8;
+    }
+
+.radio:focus-within .radio__label {
+    transform: scale(1.02);
+    opacity: 1;
+    }    
+    
+.radio:focus-within {
+    background: var(--alertGreenTrans);
+    }        
+    
+/* =============================================================== *\ 
+ 	 Icon: Tour-Type 
+\* =============================================================== */ 
+.icon_tour_type{
+    width: 27px;
+    height: 27px;
+    margin-right: 5px;   
+    border-radius: 20px;
+    } 
+
+.single .icon_tour_type{
+    filter: drop-shadow(var(--boxShadow));
+    }
+
+.icon_tour_type svg{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    }
+    
+/* =============================================================== *\ 
+   Chip 
+\* =============================================================== */ 
+.chips_container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+    }
+    
+.chips_container.centered{
+    justify-content: center;
+    }
+    
+.chips_container .chip{
+    margin: 0 5px;
+    }
+    
+.chip{
+    display: flex;
+    padding: 5px 10px;
+    border-radius: 50px;
+    background:var(--white);
+    }
+        
+.chip.sektion{
+    background: var(--sektion_bg);
+    color: var(--sektion_color);
+    }
+
+.chip.veteranen{
+    background: var(--veteranen_bg);
+    color: var(--veteranen_color);
+    }
+
+.chip.jo{
+    background: var(--jo_bg);
+    color: var(--jo_color);
+    }
+
+.chip.kibe{
+    background: var(--kibe_bg);
+    color: var(--kibe_color);
+    }
+
+.chip.fabe{
+    background: var(--fabe_bg);
+    color: var(--fabe_color);
+    }
+
+.chip.allgemein{
+    background: var(--allgemein_bg);
+    color: var(--allgemein_color);
+    }    
+
+/* =============================================================== *\ 
+ 	 Rich-Chip 
+     Chip mit Icon
+\* =============================================================== */ 
+.rich_chip{
+    display: flex;
+    padding: 0;
+    height: 27px;
+    overflow: hidden;
+    box-shadow: var(--boxShadow);
+    }
+  
+.rich_chip .svg_container{
+    background: var(--light_grey_bg);
+    height: 27px;
+    min-width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+ 
+.rich_chip .svg_container svg{
+    height: 15px;     
+    width:auto;
+    }
+
+.rich_chip .value{
+    display: flex;
+    align-items: center;
+    padding: 0px 7px 0px 5px;
+    }
+
+
+/* =============================================================== *\ 
+ 	 Chip-Mehrtagig 
+\* =============================================================== */ 
+.is_multiday{
+    align-items: flex-start;
+    }
+    
+.is_multiday_container{
+    margin: 0px 5px;
+    flex-direction: column;
+    }
+    
+.is_multiday_container .chips_container{
+    margin: 0 0 1em 0;
+    }
+
+
+/* =============================================================== *\ 
+ 	 Button-Chip-Menu 
+\* =============================================================== */ 
+button.chip{
+    transition: var(--hoverTrans);
+    border-color: transparent;
+    opacity: 0.3;
+    }
+
+button.chip.is_checked,
+button.chip.show_all{
+    opacity: 1;
+    }
+    
+button.chip.is_checked{
+    border-color: inherit;
+    }
+    
+button.chip:hover{
+    border-color: inherit;
+    box-shadow: var(--boxShadow);
+    } 
+
+
+/* =============================================================== *\ 
+ 	 More-Button
+     Animated-More-Button 
+\* =============================================================== */ 
+.more_button{
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+    text-decoration: none;
+    color: var(--black);
+    text-transform: uppercase;
+    transition: var(--hoverTrans);
+    }
+
+
+.animated_button:after,
+.animated_button_left:before{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Font Awesome 6 Pro';
+    font-weight: 900;
+    transition: var(--hoverTrans);
+    opacity: 0;
+    } 
+    
+.animated_button:after{
+    content: "\f054";
+    margin-left: -10px;
+    }     
+.download.animated_button:after{
+    content: "\f56d";
+}
+
+.animated_button:hover:after{
+    margin-left: 5px;
+    opacity: 1;
+    color:inherit;
+    }   
+
+.animated_button_left:before{
+    content: "\f053";    
+    margin-right: -10px;
+    }  
+    
+.animated_button_left:hover:before{
+    margin-right: 5px;
+    opacity: 1;
+    color:inherit;
+    }          
+/* =============================================================== *\ 
+   Cancelled und Moving-Date 
+\* =============================================================== */ 
+.datum.cancelled{
+    font-size: 85%;
+    opacity: 0.4;
+    font-style: italic;
+    }
+
+.datum.cancelled::before{
+    content: "– ";
+    }
+        
+.cancelled.alert,
+.current_moving_date{
+    color: var(--alertRed);
+    }
+
+.verschiebe_daten_container{
+    display: flex;	
+    font-size: 85%;
+    opacity: 0.6;
+    }
+    
+.verschiebe_daten_container ul{
+    display: flex;
+    list-style: none;
+    }
+
+.verschiebe_daten_container ul li{
+    margin-left: 0.5em;
+    }    
+             
+/* =============================================================== *\ 
+     Card: Touren
+     - nächste Touren
+     - Touren-Berichte
+     - vergangene Touren 
+\* =============================================================== */ 
+.touren_card{
+	background: var(--white);
+    letter-spacing: 0.5px;
+    line-height: 1.5em;
+    }
+
+.touren_card .card_header{
+    transform: translateY(-15px);
+    position: absolute;
+    width: calc(100% - 50px);
+    left: 30px;
+    display: flex;
+    z-index: 10;
+    }
+    
+.touren_card .card_main{
+    padding: 25px 25px 1em;
+    }
+
+.touren_card .card_main .date_row{
+    margin-bottom: 0.75em;
+    height: 23px;
+    }
+    
+.touren_card .card_main .entry-title{
+    display: flex;
+    height: 60px;
+    margin-bottom: 0.5em;
+    overflow: hidden;
+    }
+
+.touren_card .card_footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--light_grey_bg);
+    padding: 15px 25px;
+    }
+        
+.touren_card .datum.cancelled.moved{
+    display: none;
+    }
+    
+.touren_card .card_main .tourenleiter{
+    }
+    
+    
+    /* Einzelne "Seiten" */
+    section.form_section{
+        height: calc(100vh - 0px);
+        }
+
+     h3.form_header{
+        padding:2em 0 1em;
+        }
+
+    /* Weiter / Zurück */    
+    .button_line{
+        display: flex;
+        justify-content: center;
+        margin: 2em 0 0 0;
+        }
+
+     .button_line a,
+     .button_line .submit{
+        background: var(--alertGreen);
+        margin: 10px;
+        padding: 10px 15px;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: var(--borderRadius_5px);
+        }
+        
+    .button_line .submit{
+        font-size: 15px;
+        background: var(--alertRed);
+        }
+
+     .button_line .text_button{
+        transition: var(--hoverTrans);
+        }
+
+     .button_line .text_button:hover{
+        background: var(--alertGreenHover);
+        }
+
+    /* Begrüssungs-Text */
+     .hello{
+        line-height: 1.5em;
+        font-size: 120%;
+        }
+        
+    .touren_bericht .touren_card .card_main{
+        padding: 0 25px 1em;
+    }    
+/* =============================================================== *\ 
+ 	 
+     Archive 
+     
+\* =============================================================== */ 
+.archive .header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2em auto;
+    } 
+
+/* =============================================================== *\ 
+ 	 Archive für aktuelle Touren (post_status= publish)
+     Archive für Archive-Touren (post_status = archive)
+\* =============================================================== */ 
+.page-template-archive-touren-archive #content,
+.post-type-archive-touren #content{
+    width: 100%;
+    max-width: 1200px;
+    margin: 5em auto;
+    }
+
+
+/* =============================================================== *\ 
+   Archive: Vergangene Touren
+\* =============================================================== */ 
+.page-template-archive-touren-archive article.touren,
+.page-template-archive-touren-archive article.type-touren,
+.page-template-archive-touren-archive article.type-tourenbericht{
+    width: 100%;
+    padding: 10px;
+    }
+
+.touren_list_card .row.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    }
+    
+.titel_container{
+    display: flex;
+    }
+        
+.touren_list_card .row.head .container.info{
+    display: flex;
+    padding: 0;
+    flex-grow: 1;
+    }
+
+.touren_list_card .row.details{
+    display: none;
+    align-items: center;
+    margin-top: 1em;
+    width:100%;
+    }
+
+.touren_list_card .card_main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 10px;
+    transition: var(--hoverTrans);
+    }
+    
+.touren_list_card .card_main .chips_container{
+    margin:0;
+    }
+    
+.touren_list_card .card_main .chips_container > *{
+    margin: 0px 5px;   
+    }
+
+.touren_list_card .card_main .tourenleiter {
+    margin: 0px 10px 0 5px;
+    }
+    
+.touren_list_card .card_main .more_button{
+    margin: 0 5px;
+    }
+
+.touren_list_card h2{
+    margin:0;
+    color: inherit;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 110%;
+    line-height: 1em;
+    text-transform: none;
+    letter-spacing: 1px;
+    transition: var(--hoverTrans);
+    }
+
+.chip.date{
+    font-weight: normal;
+    }
+
+.is_open{
+    z-index: 5;
+    }
+
+/* =============================================================== *\ 
+   Archive: Tourenberichte 
+\* =============================================================== */ 
+article.tourenbericht .card_main,
+article.type-tourenbericht .card_main{
+    padding-top: 0px;
+    }    
+
+article.tourenbericht figure.hauptbild img,
+article.type-tourenbericht figure.hauptbild img{
+    margin: 0 -25px;
+    width: calc(100% + 50px);
+    max-width: none;
+    }  
+    
+/* =============================================================== *\ 
+ 	 Single-Touren
+\* =============================================================== */ 
+.single-touren #content{
+    max-width: 1200px;
+    margin: auto;
+    line-height: 1.5em;
+    padding: 20px;
+    }
+    
+.tour_header{
+    margin-bottom: 3em;
+    }
+
+.tour_header > div{
+    margin-bottom: 0.5em;    
+    }
+
+.tour_header .sektions_gruppe.chip{
+    justify-content: flex-start;
+    }
+    
+.tour_header .date_row{
+    margin-bottom: 2em;
+    }
+
+.tour_header .leitung{
+    margin-bottom: 2em;
+    }
+
+.tour_header .date_row,
+.tour_header .leitung,
+.tour_body{
+    letter-spacing: 0.5px;
+    }
+
+.single-touren #content .header_image{
+    margin-bottom: 3em;
+    background: var(--white);
+    border-radius: var(--borderRadius_5px);
+    box-shadow: var(--boxShadow);
+    }
+    
+.single .header_image figure{
+    margin:0;
+}
+.single .header_image figcaption{
+    font-style: italic;
+    font-size: 85%;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    }
+    
+.single .header_image img{
+    width: 100%;
+    }
+            
+.single-touren .tour_body .flex{
+    align-items: flex-start;
+    margin: 0 -20px;
+}
+.single-touren .tour_body .flex > *{
+    margin: 0 20px;
+}
+.touren_details h2{
+    margin-bottom: 0.5em;
+    }
+
+.touren_details.flex{
+    flex-shrink: 2;
+    
+}
+.details_container{
+    }
+    
+
+
+
+
+.detail_item{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.25em;
+    align-items: center;
+    border-radius: var(--borderRadius_5px);
+    background: var(--light_grey_bg);
+    overflow: hidden;
+    }
+
+.detail_item .content{
+    background: var(--white);
+    padding: 10px;
+    width: calc(100% - 42px);
+    }
+
+.detail_item .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: auto;
+    max-width: 22px;
+    max-height: 22px;
+    margin: 0px 10px 0 10px;
+    }
+    
+.detail_item .icon svg{
+    width: 22px;
+    height: auto;
+    max-width: 22px;
+    max-height: 22px;
+    }
+        
+.detail_item.anmeldung_ist_erforderlich{
+    border-color: var(--alertRed);
+    }
+    
+.anmeldung_ist_erforderlich .icon{
+    color: var(--alertRed);
+    }
+    
+.anmeldung_ist_erforderlich .content{
+    background: var(--alertRed);
+    color: var(--white);
+    }
+
+.detail_item ul{
+    list-style: none;
+    }
+    
+.hier_anmelden{
+    border-color: var(--alertGreen);
+    }
+    
+.hier_anmelden .icon{
+    display: none;
+    }
+    
+.hier_anmelden a.content{
+    width:100%;
+    background: var(--alertGreen);
+    color: var(--white);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: all 0.2s;
+    }
+    
+.hier_anmelden a:hover{
+    box-shadow: var(--boxShadow);
+    background-color: var(--alertGreenHover);
+    }
+
+.remaining_content{
+    max-width: 1200px;
+    margin: auto;
+    }
+
+/* =============================================================== *\ 
+
+ 	 Home neue Tourenberichte 
+
+\* =============================================================== */ 
+  .neue_tourenberichte h2{
+      text-align: center;
+  }
+  
+  .neue_tourenberichte .card_main{
+      padding-top: 0;
+  }
+
+/* =============================================================== *\ 
+
+ 	 Single-Tourenbericht 
+
+\* =============================================================== */ 
+  
+.single_tourenbericht{
+    max-width: 800px;
+    margin: auto;
+}
+
+.single_tourenbericht p{
+    margin:2em;
+    line-height: 1.25em;
+    
+}
+
+/* OPTIMIZE:  */
+.wp-block-gallery{
+    max-width: 100%;
+}
+.wp-block-gallery img{
+    display: block;
+    max-width: 400px!important;
+    height: auto;
+}
+/* =============================================================== *\ 
+ 	 Imprint + Privacy Policy
+\* =============================================================== */ 
+  
+/* =============================================================== *\ 
+ 	 Post-Edit-Link 
+\* =============================================================== */ 
+.post-edit-link{
+    }
+
+/* =============================================================== *\ 
+   Page:Tourenbericht Upload 
+   > direkt im Seiten-Template
+\* =============================================================== */ 
+
+
+
+/* =============================================================== *\ 
+   Slick-Slider 
+\* =============================================================== */ 
+.slick-slider{
+margin:0 -20px;
+}
+.single_tourenbericht .slick_slider{
+    margin:0;
+}
+.slick-list{
+    max-height: 100%;
+}
+.single_slick img{
+    width: 100%;
+    height: auto;
+    height: 75vh;
+    object-fit: cover;
+    }
+    
+.slick-slider .caption_container{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;
+    padding: 5px 10px;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+    color: white;
+    opacity: 1;
+    }
+    
+.caption_container .slick_caption,
+.caption_container .slick_caption_autor{
+    background: black;
+    padding: 1px 7px;
+    /* border-radius: 5px; */
+    margin: 0 0px 5px;
+}
+
+.slick-prev, 
+.slick-next{
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: 0px;
+    background-color: transparent;
+    outline: none;
+    z-index: 5;
+    opacity: 0;
+    transition: var(--hoverTrans);
+    }
+.bilder_slider:hover .slick-prev,
+.bilder_slider:hover .slick-next{
+    opacity: 1;
+}
+
+.slick-next {
+    right: 0;
+    }
+.slick-prev {
+    left: 0px;
+    }
+
+.slick-prev:before, 
+.slick-next:before { 
+    font-family: 'Font Awesome 6 Pro';
+    font-size: 24px; 
+    line-height: 1; 
+    color: white; 
+    opacity: 1;
+    filter:drop-shadow(var(--boxShadow)); 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+    }   
+
+.slick-prev:before { 
+    content: "\f053"; 
+    }
+
+.slick-next:before { 
+    content: "\f054"; 
+    }
+    
+/* =============================================================== *\ 
+	 Slick-Slider in Main-Card 
+\* =============================================================== */ 
+  
+.card_main .slick-slider{
+    margin: 0 -25px;
+    max-height: 400px;
+    }
+    
+.card_main .single_slick img{
+    height: 250px;
+    }
+
+/* =============================================================== *\ 
+ 	 Slick-Slider in Card-Main auf Home
+\* =============================================================== */ 
+.home .card_main .single_slick img{
+    height:250px;
+    }
+.home .card_main .caption_container{
+    display: none;
+    } 
+
+/* =============================================================== *\ 
+ 	 Slick-Slider in Archive-Tourenbericht 
+\* =============================================================== */ 
+.post-type-archive-tourenbericht .card_main .caption_container{
+    display: none;
+    } 
+
+/* =============================================================== *\ 
+   Slick-Slider in Single-Tourenbericht 
+\* =============================================================== */ 
+  .single-tourenbericht .single_slick img{
+      height: auto;
+  }
+
+/* =============================================================== *\ 
+ 	 Confetti 
+\* =============================================================== */ 
+ #confetti{
+     position: absolute;
+     top: 0;
+     width: 100vw;
+     height: 100vh;
+     z-index: -1;
+    } 
+
+/* =============================================================== *\ 
+
+ 	 Home Startseite
+
+\* =============================================================== */ 
+.home .grid.one_column{
+    width: 400px;
+}
+.home .grid.two_column{
+    width: 800px;
+
+}
+.home .grid.three_column{
+    width: 1200px;
+
+}
+
+.chip_button_container{
+    display: flex;
+    margin: 3vh auto;
+}
+
+/* =============================================================== *\ 
+
+ 	 Footer 
+
+\* =============================================================== */ 
+footer {
+    padding: 2em 20px 2px 20px;
+    color: white;
+line-height: 1.5em;
+}  
+
+footer a{
+    color:white;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+.footer_container_top{
+    display: flex;
+        justify-content: space-between;
+    }
+.footer_container_top .menu-footer-menu-2-container .menu{
+    display: flex;
+flex-direction: column;
+align-items: flex-end;
+}
+.menu-footer-menu-3-container .menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#menu-impressum-und-datenschutz{
+    display: flex;
+    justify-content: center;
+}
+#menu-impressum-und-datenschutz .menu-item a{
+padding: 0 10px;
+}
+
+footer .social_media{
+    display: flex;
+    justify-content: center;
+    margin: 5vh auto 3vh;
+    font-size: 30px;
+}
+footer .social_media .item{
+    margin: 0 10px;
+}
+footer .chip_button_container{
+    margin-bottom: 0.5em;
+}
+footer .chip_button_container a{
+    text-decoration: none;
+}
+/* =============================================================== *\ 
+ 	 Animate CSS 
+\* =============================================================== */ 
+/*!
+ * animate.css - https://animate.style/
+ * Version - 4.0.0
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2020 Animate.css
+ */
+ 
+
+
+    .animate__animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s
+        -webkit-animation-duration: var(--animate-duration);
+        animation-duration: var(--animate-duration);
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        }
+        
+.animated{
+    animation-duration: var(--animate-duration);
+    animation-fill-mode: both;
+    }
+
+.animated.infinite{
+    animation-iteration-count: infinite;
+    }
+
+.animated.repeat-1{
+    animation-iteration-count: var(--animate-repeat);
+    }
+
+.animated.repeat-2{
+    animation-iteration-count: calc(var(--animate-repeat) * 2);
+    }
+
+.animated.repeat-3{
+    animation-iteration-count: calc(var(--animate-repeat) * 3);
+    }
+
+.animated.delay-1s{
+    animation-delay: var(--animate-delay);
+    }
+
+.animated.delay-2s{
+    animation-delay: calc(var(--animate-delay) * 2);
+    }
+
+.animated.delay-3s{
+    animation-delay: calc(var(--animate-delay) * 3);
+    }
+
+.animated.delay-4s{
+    animation-delay: calc(var(--animate-delay) * 4);
+    }
+
+.animated.delay-5s{
+    animation-delay: calc(var(--animate-delay) * 5);
+    }
+
+.animated.faster{
+    animation-duration: calc(var(--animate-duration) / 2);
+    }
+
+.animated.fast{
+    animation-duration: calc(var(--animate-duration) * 0.8);
+    }
+
+.animated.slow{
+    animation-duration: calc(var(--animate-duration) * 2);
+    }
+
+.animated.slower{
+    animation-duration: calc(var(--animate-duration) * 3);
+    }
+    @keyframes pulse {
+      from {
+        transform: scale(1, 1);
+      }
+
+      50% {
+        transform: scale(1.05, 1.05);
+      }
+
+      to {
+        transform: scale(1, 1);
+      }
+    }
+
+    .pulse {
+      animation-name: pulse;
+     animation-timing-function: ease-in-out;
+    }
+/*
+.bounceInLeft{
+    animation-name: bounceInLeft;
+    }
+    
+.bounceOutLeft{
+    animation-name: bounceOutLeft;
+    }
+    
+ @keyframes bounceInLeft{
+    from,
+    60%,
+    75%,
+    90%,
+    to{
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+    0%{
+        opacity: 0;
+        transform: translate3d(-3000px, 0, 0) scaleX(3);
+        }
+
+    60%{
+        opacity: 1;
+        transform: translate3d(25px, 0, 0) scaleX(1);
+        }
+
+    75%{
+        transform: translate3d(-10px, 0, 0) scaleX(0.98);
+        }
+
+    90%{
+        transform: translate3d(5px, 0, 0) scaleX(0.995);
+        }
+
+    to{
+        transform: translate3d(0, 0, 0);
+        }
+    }
+
+@keyframes bounceOutLeft{
+    20%{
+        opacity: 1;
+        transform: translate3d(20px, 0, 0) scaleX(0.9);
+        }
+
+    to{
+        opacity: 0;
+        transform: translate3d(-2000px, 0, 0) scaleX(2);
+        }
+    }
+*/
+@-webkit-keyframes bounceInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(200px, 0, 0) scaleX(1);
+        transform: translate3d(200px, 0, 0) scaleX(1);
+        }
+    40% {
+        -webkit-transform: translate3d(-9px, 0, 0) scaleX(1);
+        transform: translate3d(-9px, 0, 0) scaleX(1);
+        }
+    60% {
+        -webkit-transform: translate3d(5px, 0, 0) scaleX(1);
+        transform: translate3d(5px, 0, 0) scaleX(1);
+        }
+    80% {
+        -webkit-transform: translate3d(-3px, 0, 0) scaleX(1);
+        transform: translate3d(-3px, 0, 0) scaleX(1);
+        }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        }
+    }
+@keyframes bounceInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(200px, 0, 0) scaleX(1);
+        transform: translate3d(200px, 0, 0) scaleX(1);
+        }
+    40% {
+        -webkit-transform: translate3d(-9px, 0, 0) scaleX(1);
+        transform: translate3d(-9px, 0, 0) scaleX(1);
+        }
+    60% {
+        -webkit-transform: translate3d(5px, 0, 0) scaleX(1);
+        transform: translate3d(5px, 0, 0) scaleX(1);
+        }
+    80% {
+        -webkit-transform: translate3d(-3px, 0, 0) scaleX(1);
+        transform: translate3d(-3px, 0, 0) scaleX(1);
+        }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        }
+    }
+.animate__bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+    
+/*    
+@-webkit-keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(10%, 0, 0);
+        transform: translate3d(10%, 0, 0);
+        }
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        }
+    }
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(10%, 0, 0);
+        transform: translate3d(10%, 0, 0);
+        }
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        }
+    }
+.animate__fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    }
+/* =============================================================== *\ 
+ 	 Media-Queries 
+\* =============================================================== */ 
+@media screen and (max-width: 1000px){	
+}    
+
+@media print, (prefers-reduced-motion: reduce){
+    .animated{
+        animation-duration: 1ms !important;
+        transition-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        }
+
+    .animated[class*='Out']{
+        opacity: 0;
+        }
+    }    

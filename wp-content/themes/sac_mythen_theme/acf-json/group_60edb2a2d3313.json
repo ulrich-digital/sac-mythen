@@ -1,0 +1,87 @@
+{
+    "key": "group_60edb2a2d3313",
+    "title": "User-Funktion",
+    "fields": [
+        {
+            "key": "field_60edb2b367674",
+            "label": "Funktion",
+            "name": "funktion",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "tourenleiter": "Tourenleiter",
+                "tourenchef_hochtour": "Tourenchef Hochtour",
+                "tourenchef_skitour": "Tourenchef Skitour",
+                "tourenchef_jo": "Tourenchef JO",
+                "tourenchef_veteranen": "Tourenchef Veteranen"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 1,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61169468fb885",
+            "label": "Telefonnummer",
+            "name": "telefonnummer",
+            "type": "number",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "079 111 22 33",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_role",
+                "operator": "==",
+                "value": "administrator"
+            }
+        ],
+        [
+            {
+                "param": "user_role",
+                "operator": "==",
+                "value": "editor"
+            }
+        ],
+        [
+            {
+                "param": "user_role",
+                "operator": "==",
+                "value": "author"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1634212879
+}

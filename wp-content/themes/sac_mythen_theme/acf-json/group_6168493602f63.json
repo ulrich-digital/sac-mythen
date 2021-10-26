@@ -1,0 +1,41 @@
+{
+    "key": "group_6168493602f63",
+    "title": "Test: Tour erfassen: Single-Date",
+    "fields": [
+        {
+            "key": "field_616849490d04e",
+            "label": "tour_erfassen_single_date",
+            "name": "tour_erfassen_single_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "j.m.Y",
+            "return_format": "j.m.Y",
+            "first_day": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1634224546
+}

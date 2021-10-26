@@ -1,0 +1,46 @@
+{
+    "key": "group_6144bf4dcd6ab",
+    "title": "Tourenbericht erfassen: Alle Touren",
+    "fields": [
+        {
+            "key": "field_6144bf54baf9d",
+            "label": "Alle Touren",
+            "name": "alle_touren",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "touren"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page_tourenbericht_erfassen.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1634212879
+}
